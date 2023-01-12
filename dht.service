@@ -1,0 +1,11 @@
+[Unit]
+Description=Start sensor streaming
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/iot-central.py '<model-id>' <id-scope> <device-id> <primary-key>
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
